@@ -9,7 +9,8 @@ app.use(express.json());
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://ahouse74.github.io'
+    'https://ahouse74.github.io',
+    'https://strayanimaltracker.com'
 ]
 
 app.use(cors({ origin: allowedOrigins }));
