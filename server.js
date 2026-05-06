@@ -7,8 +7,7 @@ const app = express();
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://ahouse74.github.io',
-    'https://capstone-server-production.up.railway.app'
+    'https://ahouse74.github.io'
 ]
 
 app.use(cors({ origin: allowedOrigins }));
