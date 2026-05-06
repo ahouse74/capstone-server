@@ -11,11 +11,12 @@ const allowedOrigins = [
     'https://capstone-server-production.up.railway.app/'
 ]
 
+app.use(cors({ origin: allowedOrigins }));
+
 app.get('/', (req, res) => {
     res.json({ status: 'ok' });
 });
 
-app.use(cors({ origin: allowedOrigins }));
 
 app.use(express.json());
 
