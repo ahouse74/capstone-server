@@ -5,6 +5,8 @@ const cors = require('cors');
 
 const app = express();
 
+app.use(express.json());
+
 const allowedOrigins = [
     'http://localhost:5173',
     'https://ahouse74.github.io'
@@ -12,15 +14,12 @@ const allowedOrigins = [
 
 app.use(cors({ origin: allowedOrigins }));
 
+const animalRoutes = require('./routes/animals');
+app.use('/api/animals', animalRoutes);
+
 app.get('/', (req, res) => {
     res.json({ status: 'ok' });
 });
-
-
-app.use(express.json());
-
-const animalRoutes = require('./routes/animals');
-app.use('/api/animals', animalRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
