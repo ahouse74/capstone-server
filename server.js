@@ -13,7 +13,7 @@ const allowedOrigins = [
     'https://capstone-server-production.up.railway.app'
 ]
 
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors());
 
 const animalRoutes = require('./routes/animals');
 app.use('/api/animals', animalRoutes);
